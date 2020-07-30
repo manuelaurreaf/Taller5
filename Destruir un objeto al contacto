@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DestroyerDere : MonoBehaviour
+{
+    public GameObject victima;
+    void OnCollisionEnter(Collision collision)
+    {
+
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        var objeto = collision.gameObject;
+        Destroy(objeto);
+        var objetoNuevo = Instantiate(victima);
+
+    }
+    void OnCollisionStay(Collision collision)
+    {
+
+    }
+}
