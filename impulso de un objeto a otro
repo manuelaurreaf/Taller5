@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BoostIzquierdo : MonoBehaviour
+{
+    public float fuerzay = 0;
+    public float fuerzax = 0;
+    public float torquex = 0;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        
+    }
+    void OnCollisionExit(Collision collision)
+    {
+
+    }
+    void OnCollisionStay(Collision collision)
+    {
+        var objeto = collision.gameObject;
+        objeto.GetComponent<Rigidbody>().AddForce(new Vector3(fuerzax, fuerzay, 0));
+        objeto.GetComponent<Rigidbody>().AddTorque(new Vector3(torquex, 0, 0));
+
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log(message: "Entrando al trigger");
+    }
+    private void OnTriggerExit(Collider collider)
+    {
+        Debug.Log(message: "Saliendo del trigger");
+    }
+    private void OnTriggerStay(Collider collider)
+    {
+        Debug.Log(message: "Esperando salir del trigger");
+       
+        
+    }
+}
+
