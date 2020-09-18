@@ -16,7 +16,7 @@ public class Controlcambiocamara : MonoBehaviour
     {
         
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other) // automatizar el cambio de camaras cuando choca con algo trigger
     {
         controladorescena.AsignarCamara(1, 10);
     }
